@@ -16,7 +16,7 @@ function bin_search($file_name, $key) {
 
         //Moving pointer to beginning of the line
         $offset = $mid;
-        while(fgetc($fopen) != "\n" && $offset > 0) {
+        while(fgetc($fopen) != "\x0A" && $offset > 0) {
             fseek($fopen, $offset);
             $offset--;
         }
